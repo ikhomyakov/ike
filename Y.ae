@@ -6,9 +6,9 @@
 --           (X (lambda (arg) ((procedure procedure) arg)))))))
 -- 
 --
--- H = (?f.?n.(ISZERO n) 1 (MULT n (f (PRED n)))) 
+-- H = (\f.\n.(ISZERO n) 1 (MULT n (f (PRED n)))) 
 -- FACT = (Y H) 
--- FACT = (((? h . (? x . h (x x)) (? x . h (x x))) (?f.?n.(ISZERO n) 1 (MULT n (f (PRED n))))) 
+-- FACT = (((\h . (\x . h (x x)) (\x . h (x x))) (\f.\n.(ISZERO n) 1 (MULT n (f (PRED n))))) 
 -- 
 -- \h->(\x->h (x x))(\x->h (x x))
 --
