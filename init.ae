@@ -1,0 +1,46 @@
+--
+-- $Id: init.ae,v 1.7 2004/07/11 04:53:08 ikh Exp $
+--
+
+--
+-- Loop neverending ...
+-- ( f -> f )
+--
+0 "loop" def
+[ dup @ "loop" lookup @ ] "loop" redefine
+
+--
+-- Factorial
+-- ( n 1 -> 0 n! )
+--
+0 "fact" def
+[ over * swap 1 swap - swap over [] swap [ "fact" lookup @ ] swap if ] "fact" redefine
+
+0 "fact'" def
+[ over * swap 1 swap - swap over >a [] [ "fact'" lookup @ ] a> if ] "fact'" redefine
+
+
+--
+-- squared
+--
+[ dup * ] "squared" def
+
+
+--
+-- Y combinator !!!
+-- Y(f)=f(Y(f))
+--
+[ [ over over swap @ ] dup @ ] "myY" def
+
+--
+-- for
+--
+[ swap dup . "," s. dec swap over [ drop ] over if ] "for" def
+
+[   >a   swap   >a   @   a>   swap   >a   @   a>   a>   @   ]   "merge" def
+
+0 "dec" def
+[ 1 . 1 - dup >a [] [dec] a> if ] "dec" redefine
+
+[ 1 . ] "xxx" def
+[ 2 . "xxx" lookup @ ] "xxx" redefine

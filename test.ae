@@ -1,0 +1,25 @@
+-- [ 1 2 + ] @ dup .
+-- [ [ 1 2 + ] ] @ @ dup .
+-- [ 3 [ 4 5 ] @ + '+ @ ] @ dup .
+-- +
+-- +
+-- .
+
+--
+-- TRO works!
+--
+-- 100000 [ swap dec swap over dup . " " s. over [ "done." s. ] swap rot if ] dup @ drop drop
+
+-- 
+-- Y(f)=f(Y(f))
+--
+-- [ "hello, Y! " s. ] [ [ over over swap @ @ ] dup @ ] @ drop drop
+[ "hello, Y! " s. @ ] Y
+-- 10 for Y
+["\
+hello,\"world\"\n\\hello\\, world\n...\
+hello world 2
+hello world 3
+"][123 . @ s.] @
+
+1 2 '+ @ . "\n" s.

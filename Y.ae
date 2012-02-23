@@ -1,0 +1,24 @@
+-- (define Y
+--      (lambda (X)
+--        ((lambda (procedure)
+--           (X (lambda (arg) ((procedure procedure) arg))))
+--         (lambda (procedure)
+--           (X (lambda (arg) ((procedure procedure) arg)))))))
+-- 
+--
+-- H = (?f.?n.(ISZERO n) 1 (MULT n (f (PRED n)))) 
+-- FACT = (Y H) 
+-- FACT = (((? h . (? x . h (x x)) (? x . h (x x))) (?f.?n.(ISZERO n) 1 (MULT n (f (PRED n))))) 
+-- 
+-- \h->(\x->h (x x))(\x->h (x x))
+--
+------------------------------------------------------------------------------------------------- 
+-- Y f = f (Y f) = (f . Y) f
+-- Y = f . Y
+------------------------------------------------------------------------------------------------- 
+--
+--
+-- Y = (\f->\x->x (f f x)) (\f->\x->x (f f x))
+-- Y' = \f->(\x->f (x x)) (\x->f (x x))
+--
+[swap >a dup @ a> @ dup @] "Y" def
