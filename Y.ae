@@ -25,3 +25,10 @@
 --
 -- http://en.wikipedia.org/wiki/Fixed-point_combinator
 --
+-- One well-known (and perhaps the simplest) fixed-point combinator 
+-- in the untyped lambda calculus is called the Y combinator. It was 
+-- discovered by Haskell B. Curry, and is defined as:
+--     Y = λf.(λx.f (x x)) (λx.f (x x))
+--
+--
+
