@@ -1,7 +1,20 @@
 <pre>
-IKE: A Stack Based Functional Programming Language inspired by JOY
-Copyright (c) 2003 Igor Khomyakov
-usage: ike[d] { file | - | =code } ...
-tokens: [ ] @ name \"string\" integer --comment
+IKE: A Stack Based Functional Programming Language inspired by JOY. Copyright (c) 2003 Igor Khomyakov
 
+License: 
+   BSD License (see ike.c for more detail)
+
+Usage: 
+   ike[d] { file | - | =code } ...
+
+Tokens: 
+   [ ] @ name \"string\" integer --comment
+
+Dictionary: 
+   if cond s. . a> >a pick over2 over -rot rot 
+   swap2 swap drop2 drop dup2 dup ~ | & > = neg 
+   / * - + dec inc lookup redefine def
+
+Example:
+   5 dup * .
 </pre>
